@@ -1,0 +1,28 @@
+<table mat-table [dataSource]="countries" class="mat-elevation-z8">
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef> Abreviacion </th>
+      <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre del Pais </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="continentName">
+      <th mat-header-cell *matHeaderCellDef> Nombre del continente </th>
+      <td mat-cell *matCellDef="let element" > 
+        {{element.continent.name}}
+    </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="currencie">
+      <th mat-header-cell *matHeaderCellDef> Moneda </th>
+      <td mat-cell *matCellDef="let element"> 
+        {{element.currencies}}
+         </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
